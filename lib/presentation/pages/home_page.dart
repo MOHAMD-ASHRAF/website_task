@@ -18,16 +18,28 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           MaterialButton(onPressed: (){
-            locker.addLocker(lockerId: '1111', location: 'arish', numOfCells: 10);
+            locker.addLocker(lockerId: '555555', location: 'ahmed', numOfCells: 10);
           },
-          child: Center(
+            child: Center(
             child: Container(
-              color: Colors.yellow,
+              color: Colors.green,
               width: 100,
               height: 100,
               child: const Center(child: Text('add')),
             ),
-          ))
+          )),
+               SizedBox(height: 20,),
+          MaterialButton(onPressed: (){
+            locker.getLockerId();
+          },
+              child: Center(
+                child: Container(
+                  color: Colors.deepPurpleAccent,
+                  width: 100,
+                  height: 100,
+                  child: const Center(child: Text('get')),
+                ),
+              ))
         ],
       ),
     );
