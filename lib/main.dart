@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:website_task/business_logic/locker.dart';
 import 'firebase_options.dart';
 import 'presentation/pages/home_page.dart';
-void main()async {
+Future<void> main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

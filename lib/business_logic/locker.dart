@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 class Locker extends ChangeNotifier {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
-  List locker = [];
+  List<QueryDocumentSnapshot> dataList = [];
 
   addLocker({required String lockerId,
       required String location,
@@ -23,11 +23,9 @@ class Locker extends ChangeNotifier {
 
 
   getLockerId() async{
-      var responseBody = await users.get();
-       for (var element in responseBody.docs) {
-         locker.add(element.data());
-       }
-      notifyListeners();
-      print(locker);
+          QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('users').get();
+          dataList.addAll(querySnapshot.docs);
+          notifyListeners();
+          print(dataList);
   }
 }
