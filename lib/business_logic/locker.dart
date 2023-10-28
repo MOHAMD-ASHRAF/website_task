@@ -7,7 +7,7 @@ class Locker extends ChangeNotifier {
 
   addLocker({required String lockerId,
       required String location,
-      required double numOfCells}) async {
+      required String numOfCells}) async {
     try {
       await users.add({
         'lockerId': lockerId,

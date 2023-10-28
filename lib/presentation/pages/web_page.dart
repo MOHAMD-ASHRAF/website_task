@@ -81,7 +81,7 @@ class WebBody extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child:  const Row(
+                      child:   Row(
                         children: [
                           GetDataFromUser()
                         ],
