@@ -3,8 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:website_task/business_logic/locker.dart';
+import 'package:website_task/util/home_page.dart';
 import 'firebase_options.dart';
-import 'presentation/pages/home_page.dart';
 Future<void> main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -27,9 +27,11 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home:  HomePage(),
+        home:  const HomePage(),
       ),
     );
   }
 }
+
+
 
