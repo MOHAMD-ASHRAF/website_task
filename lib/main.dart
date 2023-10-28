@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:website_task/business_logic/locker.dart';
 import 'package:website_task/util/home_page.dart';
 import 'firebase_options.dart';
-Future<void> main()async {
+void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => Locker(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
