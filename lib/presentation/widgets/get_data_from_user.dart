@@ -1,24 +1,24 @@
 
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:website_task/business_logic/locker.dart';
 import 'package:website_task/presentation/widgets/default_button.dart';
 import 'package:website_task/presentation/widgets/default_text_form_feild.dart';
 
 class GetDataFromUser extends StatelessWidget {
    GetDataFromUser({
-    super.key,
+    super.key, required this.locker,
   });
 
-
+   final Locker locker;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController lockerController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final locker = Provider.of<Locker>(context);
     return Form(
       key: _formKey,
       child: Column(

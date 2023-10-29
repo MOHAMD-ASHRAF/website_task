@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:website_task/business_logic/locker.dart';
 import 'package:provider/provider.dart';
-import 'package:website_task/presentation/widgets/default_text_form_feild.dart';
+import 'package:website_task/presentation/widgets/default_button.dart';
 import 'package:website_task/presentation/widgets/get_data_from_user.dart';
 import 'package:website_task/presentation/widgets/header_web_page.dart';
+import 'package:website_task/presentation/widgets/show_data_widget.dart';
 
 class WebBody extends StatelessWidget {
   const WebBody({super.key});
@@ -42,8 +43,8 @@ class WebBody extends StatelessWidget {
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                         colors: [
-                          Color(0xff9E9E9E),
-                          Color(0xffD3D3D3),
+                          Color(0xff9E6E9E),
+                          Color(0xffD3D698),
                         ],
                       ),
                       borderRadius: BorderRadius.circular(18),
@@ -83,62 +84,13 @@ class WebBody extends StatelessWidget {
                       ),
                       child:   Row(
                         children: [
-                          GetDataFromUser()
+                          GetDataFromUser(locker: locker),
+                          Spacer(),
+                          ShowDataWidget(locker: locker)
                         ],
                       ),
                     ),
-
                   ),
-                  // Column(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   crossAxisAlignment: CrossAxisAlignment.center,
-                  //   children: [
-                  //     MaterialButton(
-                  //         onPressed: () {
-                  //           locker.addLocker(
-                  //               lockerId: '555555', location: 'ahmed', numOfCells: 10);
-                  //         },
-                  //         child: Center(
-                  //           child: Container(
-                  //             color: Colors.green,
-                  //             width: 100,
-                  //             height: 100,
-                  //             child: const Center(child: Text('add')),
-                  //           ),
-                  //         )),
-                  //     const SizedBox(
-                  //       height: 20,
-                  //     ),
-                  //     MaterialButton(
-                  //         onPressed: () {
-                  //           locker.getLockerId();
-                  //         },
-                  //         child: Center(
-                  //           child: Container(
-                  //             color: Colors.deepPurpleAccent,
-                  //             width: 100,
-                  //             height: 100,
-                  //             child: const Center(child: Text('get')),
-                  //           ),
-                  //         )
-                  //     ),
-                  //   ],
-                  // ),
-                  // Expanded(
-                  //   child: ListView.separated(
-                  //     itemBuilder: (context, int index) {
-                  //       return Container(
-                  //         width: 100,
-                  //         height: 50,
-                  //         child:  Text('${locker.dataList[index]['lockerId']}'),
-                  //       );
-                  //     },
-                  //     itemCount: locker.dataList.length,
-                  //     separatorBuilder: (BuildContext context, int index) {
-                  //       return const SizedBox(height: 8);
-                  //     },
-                  //   ),
-                  // ),
                 ],
               ),
             ],
@@ -148,6 +100,7 @@ class WebBody extends StatelessWidget {
     );
   }
 }
+
 
 
 
