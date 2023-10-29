@@ -16,33 +16,28 @@ class ShowDataWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Text('List of Locker id',style: TextStyle(fontSize: 22,),),
+        SizedBox(height: 12,),
         Expanded(
           child: Container(
-            width: MediaQuery.of(context).size.width / 3 ,
+            width: MediaQuery.of(context).size.width / 4 ,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-                  Color(0xff9E9E95),
-                  Color(0xffD3D381),
-                ],
-              ),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(18),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.2),
                   spreadRadius: 5,
                   blurRadius: 5,
-                  offset: const Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
             child: ListView.builder(
               scrollDirection: Axis.vertical,
               itemBuilder: (context,index){
-                return Text('${locker.dataList[index]['lockerId']}',style: const TextStyle(fontSize: 18),);
+                return Center(child: Text('${locker.dataList[index]['lockerId']}',style: const TextStyle(fontSize: 18.5),));
               },
               itemCount: locker.dataList.length,),
           ),
@@ -51,6 +46,7 @@ class ShowDataWidget extends StatelessWidget {
         DefaultMaterialButton(
           width: 100,
           onPressed: () {
+            locker.dataList.clear();
             locker.getLockerId();
           },
           text: 'scan',)
