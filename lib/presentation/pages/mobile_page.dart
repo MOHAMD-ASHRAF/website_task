@@ -6,10 +6,8 @@ class MobileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('m o b i l e '),
-      ),
+    return const Scaffold(
+      body: Center(child: Text('m o b i l e ' , style: TextStyle(fontSize: 24 , fontWeight: FontWeight.bold),)),
     );
   }
 }

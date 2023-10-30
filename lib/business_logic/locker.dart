@@ -5,7 +5,7 @@ class Locker extends ChangeNotifier {
   CollectionReference users = FirebaseFirestore.instance.collection('locker');
   List<QueryDocumentSnapshot> dataList = [];
 
-  addLocker({required String lockerId,
+  Future<void>  addLocker({required String lockerId,
       required String location,
       required String numOfCells}) async {
     try {
@@ -22,7 +22,7 @@ class Locker extends ChangeNotifier {
   }
 
 
-  getLockerId() async{
+ Future<void> getLockerId() async{
           QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('locker').get();
           dataList.addAll(querySnapshot.docs);
           notifyListeners();

@@ -1,5 +1,3 @@
-
-
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
@@ -8,16 +6,17 @@ import 'package:website_task/presentation/widgets/default_button.dart';
 import 'package:website_task/presentation/widgets/default_text_form_feild.dart';
 
 class GetDataFromUser extends StatelessWidget {
-   GetDataFromUser({
-    super.key, required this.locker,
+  GetDataFromUser({
+    super.key,
+    required this.locker,
   });
 
-
-   final Locker locker;
+  final Locker locker;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController lockerController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   TextEditingController numberController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -27,43 +26,83 @@ class GetDataFromUser extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Text('Locker Id',style: TextStyle(fontSize: 18),),
-              const SizedBox(width: 8,),
-              DefaultTextFormFeild(height: 50,controller: lockerController,
-              validator: (value) {
-                if (value != null && value.length < 6) {
-                  return "enter min r number";
-                }
-                return null;
-              }, hintText: 'Locker Id',
+              const Text(
+                'Locker Id',
+                style: TextStyle(fontSize: 18),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              DefaultTextFormFeild(
+                height: 50,
+                controller: lockerController,
+                validator: (value) {
+                  if (value != null && value.length < 6) {
+                    return "enter min 6 number";
+                  }
+                  return null;
+                },
+                hintText: 'Locker Id',
               ),
             ],
           ),
           Row(
             children: [
-              const Text('Location',style: TextStyle(fontSize: 18),),
-              const SizedBox(width: 8,),
-              DefaultTextFormFeild(height: 50,controller: locationController, hintText: 'Location',),
+              const Text(
+                'Location',
+                style: TextStyle(fontSize: 18),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              DefaultTextFormFeild(
+                height: 50,
+                controller: locationController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "enter location";
+                  }
+                  return null;
+                },
+                hintText: 'Location',
+              ),
             ],
           ),
           Row(
             children: [
-              const Text('Number',style: TextStyle(fontSize: 18),),
-              const SizedBox(width: 8,),
-              DefaultTextFormFeild(height: 50, controller: numberController, hintText: 'Number',),
+              const Text(
+                'Number',
+                style: TextStyle(fontSize: 18),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              DefaultTextFormFeild(
+                height: 50,
+                controller: numberController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "pleas enter the number fo cells";
+                  }
+                  return null;
+                },
+                hintText: 'Cells',
+              ),
             ],
           ),
-
           DefaultMaterialButton(
             width: 100,
             onPressed: () {
-              final isValidateForm  = _formKey.currentState!.validate();
-              if(isValidateForm){
+              final isValidateForm = _formKey.currentState!.validate();
+              if (isValidateForm) {
                 locker.addLocker(
-                    lockerId: lockerController.text, location: locationController.text, numOfCells: numberController.text);
+                    lockerId: lockerController.text,
+                    location: locationController.text,
+                    numOfCells: numberController.text);
               }
             },
-            text: 'Save',)
+            text: 'Save',
+          )
         ],
       ),
     );

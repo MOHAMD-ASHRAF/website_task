@@ -30,8 +30,8 @@ class DefaultTextFormFeild extends StatelessWidget {
         onSaved: (value) {},
         decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
-            borderRadius: BorderRadius.circular(24),
+            borderSide: const BorderSide(color: Colors.transparent),
+            borderRadius: BorderRadius.circular(14),
           ),
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey),

@@ -1,1 +1,2 @@
-const mobileWidth = 600;
+const webWidth = 900;
+const tabletWidth = 600;
