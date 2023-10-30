@@ -8,9 +8,10 @@ class DefaultTextFormFeild extends StatelessWidget {
   final TextEditingController? controller;
   TextInputType? keyboardType;
   final int maxLine;
+  final String hintText;
   final double height;
   DefaultTextFormFeild({
-    super.key, this.onPressed, this.maxLine = 1, this.keyboardType, this.validator, this.controller, this.height = 60,
+    super.key, this.onPressed, this.maxLine = 1, this.keyboardType, this.validator, this.controller, this.height = 60, required this.hintText,
   });
 
   @override
@@ -32,7 +33,7 @@ class DefaultTextFormFeild extends StatelessWidget {
             borderSide: BorderSide(color: Colors.transparent),
             borderRadius: BorderRadius.circular(24),
           ),
-          hintText: 'Search',
+          hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey),
           filled: true,
           fillColor: Colors.white,

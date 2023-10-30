@@ -16,15 +16,6 @@ class WebBody extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/image/backGround1.jpg'),fit: BoxFit.cover)
-          // gradient: LinearGradient(
-          //   begin: Alignment.topRight,
-          //   end: Alignment.bottomLeft,
-          //   colors: [
-          //     Color(0xff7D8A9B),
-          //     Color(0xff959FAB),
-          //     Color(0xffD3D3D3),
-          //   ],
-          // ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(20),

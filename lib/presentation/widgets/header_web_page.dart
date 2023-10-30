@@ -27,7 +27,7 @@ class HeaderWebPage extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 18,),
-          DefaultTextFormFeild(),
+          DefaultTextFormFeild(hintText: 'search',),
           const Spacer(),
           const Icon(Icons.add_alert_sharp,size: 24,color: Colors.white,),
           const SizedBox(width: 12,),
