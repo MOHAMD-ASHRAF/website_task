@@ -1,16 +1,10 @@
-# website_task
+# simple_website
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### screens of application 
+that website yalk some fata from user and show it.
+tec used: firesroe
+###
+<div>
+<img src="https://github.com/MOHAMD-ASHRAF/notes_app/assets/84055555/0189e7df-20fd-4f70-9f7e-5d6d4daa231e" width= 600>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
